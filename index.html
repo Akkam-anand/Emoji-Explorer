@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emoji Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>✨ Emoji Explorer</h1>
+    <p>Click any emoji to copy it to your clipboard!</p>
+  </header>
+
+  <div class="search-wrapper">
+    <span class="search-icon">🔍</span>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search emojis... try 'smile' or 'heart'"
+      autocomplete="off"
+    />
+  </div>
+
+  <div class="stats" id="stats">Loading emojis...</div>
+
+  <div class="emoji-grid" id="emojiGrid">
+    <div class="loader">⏳</div>
+  </div>
+
+  <div class="copy-toast" id="toast">Copied! 🎉</div>
+
+  <!-- Load our JavaScript file last so the HTML is ready when it runs -->
+  <script src="emoji.js"></script>
+
+</body>
+</html>
