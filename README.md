@@ -43,15 +43,13 @@ emoji-explorer/
 
 ---
 
-## 🧠 JavaScript Concepts Used
-
 ### 1. Fetching External Data
-The emoji data comes from an external `.js` file. We load it by injecting a `<script>` tag dynamically:
+The emoji data comes from an external `.js` file. We use `fetch()` to get it as plain text, then extract the array using a regular expression and parse it into usable JavaScript:
 ```js
-const script = document.createElement('script');
-script.src = 'https://akhil-06.github.io/emoji_project/emojiList.js';
-script.onload = () => { /* data is now available */ };
-document.head.appendChild(script);
+const response = await fetch('https://akhil-06.github.io/emoji_project/emojiList.js');
+const text = await response.text();       // get file contents as a string
+const match = text.match(/\[[\s\S]*\]/); // extract the [...] array part
+const data = JSON.parse(match[0]);        // convert string into JS array
 ```
 
 ### 2. Rendering Emojis with the DOM
@@ -81,11 +79,12 @@ navigator.clipboard.writeText(emoji.character);
 
 ---
 
+
 ## 🛠️ Tech Stack
 
 - **HTML5** — Semantic page structure
 - **CSS3** — Grid layout, animations, glassmorphism effects
-- **Vanilla JavaScript** — Fetch, DOM manipulation, event listeners
+- **JavaScript** — Fetch, DOM manipulation, event listeners
 - **Google Fonts** — Fredoka One + Nunito
 - **Data Source** — [emojiList.js](https://akhil-06.github.io/emoji_project/emojiList.js)
 
@@ -95,12 +94,14 @@ navigator.clipboard.writeText(emoji.character);
 ## 📚 What I Learned
 
 - How to structure a multi-file web project (HTML / CSS / JS separation)
-- How to load and use data from an external JavaScript file
-- How to use `Array.filter()` and `String.includes()` to implement search
+- How to use fetch() and async/await to load data from an external URL
+- How to extract structured data from a text response using Regular Expressions (regex)
+- How to use JSON.parse() to convert a string into a usable JavaScript array
+- How to use Array.filter() and String.includes() to implement search
 - How to dynamically create and insert HTML elements with JavaScript
-- How to use `addEventListener` for real-time user interaction
+- How to use addEventListener for real-time user interaction
 - CSS Grid for responsive layouts
-- CSS `@keyframes` for animations and transitions
+- CSS @keyframes for animations and transitions
 - The Clipboard API for copy-to-clipboard functionality
 
 ---
