@@ -10,12 +10,6 @@ A fun and interactive emoji browser built with ** HTML, CSS, and JavaScript** �
 
 ---
 
-## 📸 Preview
-
-![Emoji Explorer Preview](preview.png)
-
----
-
 ## 🚀 Features
 
 | Feature | Description |
