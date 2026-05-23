@@ -6,7 +6,7 @@ A fun and interactive emoji browser built with ** HTML, CSS, and JavaScript** �
 
 ## 🌐 Live Demo
 
-🔗 [Click here to view the live project](https://github.com/Akkam-anand/Emoji-Explorer)
+🔗 [Click here to view the live project](https://akkam-anand.github.io/Emoji-Explorer/)
 
 ---
 
